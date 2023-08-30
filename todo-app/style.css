@@ -1,0 +1,70 @@
+/* Importing the Roboto font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Global reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Styling the body */
+body {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Styling the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* Styling the input for adding items */
+#add-item {
+    width: 350px;
+    height: 30px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling the item list */
+#item-list {
+    list-style-type: none;
+}
+
+/* Styling individual items in the list */
+#item-list li {
+    position: relative;
+    margin: 10px;
+    color: white;
+    padding: 10px;
+    background-color: black;
+    padding-right: 30px;
+    border-radius: 5px;
+    /* text-align: justify; */
+}
+
+/* Styling the 'x' icon in each item */
+i {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+/* Styling for completed items */
+.done {
+    text-decoration: line-through;
+    color: #ccc;
+    background: black;
+}
+

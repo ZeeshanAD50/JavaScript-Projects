@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do</title>
+</head>
+<body>
+    <div class="container">
+        <input type="text" id="add-item" placeholder="Write something here...">
+        <ul id="item-list">
+        </ul>
+    </div>
+    <script>
+        // Get the input and item list elements
+        const addItemInput = document.querySelector("#add-item");
+        const itemList = document.querySelector("#item-list");
+
+        // Listen for the Enter key press to add a new ToDo
+        addItemInput.addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                addTodo(this.value);
+                this.value = ""; // Clear the input field
+            }
+        });
+
+        // Function to add a new ToDo item
+        const addTodo = (itemText) => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `${itemText} <i class="fas fa-times"></i>`; // Insert the entered text and FontAwesome icon
+
+            listItem.addEventListener("click", function() {
+                this.classList.toggle("done"); // Toggle "done" class on click
+            });
+
+            listItem.querySelector("i").addEventListener("click", function(event) {
+                event.stopPropagation(); // Prevent the li click event from being triggered
+                listItem.remove(); // Remove the ToDo item
+            });
+
+            itemList.appendChild(listItem); // Append the new ToDo item to the list
+        };
+    </script>
+</body>
+</html>
+
+<style>
+/* Your CSS styles here */
+</style>
