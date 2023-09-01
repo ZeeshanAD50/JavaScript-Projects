@@ -22,9 +22,10 @@ body {
     display: flex;
     flex-direction: column;
     width: 400px;
-    height: 400px;
+    height: auto; /* Let content dictate the height */
     background-color: white;
     border-radius: 10px;
+    margin: 15px;
 }
 
 /* Styling the input for adding items */
@@ -44,14 +45,12 @@ body {
 
 /* Styling individual items in the list */
 #item-list li {
-    position: relative;
     margin: 10px;
     color: white;
     padding: 10px;
     background-color: black;
     padding-right: 30px;
     border-radius: 5px;
-    /* text-align: justify; */
 }
 
 /* Styling the 'x' icon in each item */
@@ -65,6 +64,18 @@ i {
 .done {
     text-decoration: line-through;
     color: #ccc;
-    background: black;
 }
 
+@media only screen and (max-width: 768px) {
+    body {
+        background-color: white;
+    }
+    #add-item {
+        width: 87%; /* Adjust as needed */
+        margin: 10px;
+    }
+
+    .container {
+        height: auto; /* Let content dictate the height */
+    }
+}
